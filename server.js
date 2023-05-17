@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 
 app.use("/createReview", require("./routes/createReview"));
-//get reviews
-//add film
+app.use("/getReviews", require("./routes/getReviews"));
+// app.use("/addFilm", require("./routes/addFilm"));
 //get films
 
 const PORT = process.env.PORT || 8888;

@@ -5,7 +5,11 @@ const reviewSchema = new mongoose.Schema({
   viewingDate: Date,
   location: Boolean,
   review: String,
-  rating: Number,
+  rating: {
+    type: Number,
+    min: 0,
+    max: 10,
+  },
 });
 
 module.exports = reviewSchema;
