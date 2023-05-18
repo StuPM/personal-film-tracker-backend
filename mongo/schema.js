@@ -12,4 +12,16 @@ const reviewSchema = new mongoose.Schema({
   },
 });
 
-module.exports = reviewSchema;
+const filmSchema = new mongoose.Schema({
+  dateAdded: Date,
+  id: Number,
+  genre_ids: Object,
+  original_language: String,
+  original_title: String,
+  overview: String,
+  poster_path: String,
+  release_date: Date,
+  title: String,
+});
+
+module.exports = { reviewSchema: reviewSchema, filmSchema: filmSchema };
