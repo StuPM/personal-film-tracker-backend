@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema({
   id: Number,
-  viewingDate: Date,
+  dateReviewed: Date,
   location: Boolean,
   review: String,
   rating: {
@@ -13,15 +13,15 @@ const reviewSchema = new mongoose.Schema({
 });
 
 const filmSchema = new mongoose.Schema({
-  dateAdded: Date,
   id: Number,
-  genre_ids: Object,
-  original_language: String,
-  original_title: String,
+  title: String,
   overview: String,
+  dateWatched: Date,
+  original_title: String,
+  original_language: String,
+  genre_ids: Object,
   poster_path: String,
   release_date: Date,
-  title: String,
 });
 
 module.exports = { reviewSchema: reviewSchema, filmSchema: filmSchema };
