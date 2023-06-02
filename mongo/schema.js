@@ -5,11 +5,6 @@ const reviewSchema = new mongoose.Schema({
   dateReviewed: Date,
   location: Boolean,
   review: String,
-  rating: {
-    type: Number,
-    min: 0,
-    max: 10,
-  },
 });
 
 const filmSchema = new mongoose.Schema({
@@ -22,6 +17,11 @@ const filmSchema = new mongoose.Schema({
   genre_ids: Object,
   poster_path: String,
   release_date: Date,
+  rating: {
+    type: Number,
+    min: 0,
+    max: 10,
+  },
 });
 
 module.exports = { reviewSchema: reviewSchema, filmSchema: filmSchema };

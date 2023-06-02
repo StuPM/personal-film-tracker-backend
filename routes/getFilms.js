@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   const query = {};
 
   const Films = mongoose.model("films", filmSchema, "films");
-  const results = await Films.find(query).sort("-dateAdded");
+  const results = await Films.find(query).sort("-dateWatched");
 
   res.send(results);
 });
