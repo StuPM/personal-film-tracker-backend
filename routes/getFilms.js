@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
   //limit
   //order by
 
+  //TODO Remove empty query
   const query = {};
 
   const Films = mongoose.model("films", filmSchema, "films");
