@@ -11,9 +11,7 @@ router.get("/", async (req, res) => {
   const filmCount = mongoose.model("films", filmSchema, "films");
   const results = await filmCount.countDocuments(query);
 
-  console.log("ID " + req.query.id + ", results " + results);
-
-  res.send({ count: results });
+  res.send(String(results));
 });
 
 module.exports = router;

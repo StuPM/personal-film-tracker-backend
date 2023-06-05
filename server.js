@@ -5,11 +5,12 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.use("/addReview", require("./routes/addReview")); //Create Post
-app.use("/getReviews", require("./routes/getReviews")); //Read Get
-app.use("/addFilm", require("./routes/addFilm")); // Create Post
-app.use("/getFilms", require("./routes/getFilms")); //Read Get
+app.use("/addReview", require("./routes/addReview"));
+app.use("/getReviews", require("./routes/getReviews"));
+app.use("/addFilm", require("./routes/addFilm"));
+app.use("/getFilms", require("./routes/getFilms"));
 app.use("/countFilmsByID", require("./routes/countFilmsByID"));
+app.use("/getFilmRating", require("./routes/getFilmRating"));
 
 const PORT = process.env.PORT || 8888;
 
