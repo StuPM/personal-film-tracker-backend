@@ -6,12 +6,7 @@ const { filmSchema } = require("../mongo/schema");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  //get films
-  //limit
-  //order by
-
-  //TODO Remove empty query
-  const query = {};
+  const query = { $expr: { $eq: [{ $year: "$dateWatched" }, req.query.year] } };
 
   const Films = mongoose.model("films", filmSchema, "films");
   const results = await Films.find(query).sort("-dateWatched");
