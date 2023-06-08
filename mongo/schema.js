@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const reviewSchema = new mongoose.Schema({
   id: Number,
   dateReviewed: Date,
-  location: Boolean,
   review: String,
 });
 
@@ -22,6 +21,7 @@ const filmSchema = new mongoose.Schema({
     min: 0,
     max: 10,
   },
+  location: Boolean,
 });
 
 module.exports = { reviewSchema: reviewSchema, filmSchema: filmSchema };
