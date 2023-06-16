@@ -2,11 +2,10 @@ const express = require("express");
 const app = express();
 const db = require("../mongo/mongo");
 const mongoose = require("mongoose");
-const { reviewSchema } = require("../mongo/schema");
 const router = express.Router();
+const { Review } = require("../mongo/schema");
 
 router.post("/", async (req, res) => {
-  const Review = mongoose.model("reviews", reviewSchema, "reviews");
   const newReview = new Review({ ...req.body });
 
   await newReview

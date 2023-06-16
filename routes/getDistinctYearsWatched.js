@@ -2,16 +2,11 @@ const express = require("express");
 const app = express();
 const db = require("../mongo/mongo");
 const mongoose = require("mongoose");
-const { filmSchema } = require("../mongo/schema");
+const { Film } = require("../mongo/schema");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  //no query
-  //get distinct year from dateWatched
-  //return years
-
-  const Films = mongoose.model("films", filmSchema, "films");
-  const results = await Films.aggregate([
+  const results = await Film.aggregate([
     {
       $group: {
         _id: null,

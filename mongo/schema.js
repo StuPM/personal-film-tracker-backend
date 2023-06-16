@@ -24,4 +24,7 @@ const filmSchema = new mongoose.Schema({
   location: Boolean,
 });
 
-module.exports = { reviewSchema: reviewSchema, filmSchema: filmSchema };
+const Film = mongoose.model("films", filmSchema, "films");
+const Review = mongoose.model("reviews", reviewSchema, "reviews");
+
+module.exports = { Film, Review };
